@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fcf6ee8406882513ccad8928a9290d31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px; 
+    width: 200px; 
+    background-color: white; 
+    border:2px solid grey; 
+    z-index:9999; 
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+">
+<b style="font-size: 14px;">LÉGENDE ET STATISTIQUES</b><br><br>
+<b>Districts (Total: 4)</b><br><i style="background:purple; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>Funa: 6<br><i style="background:blue; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>Lukunga: 6<br><i style="background:red; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>Tshangu: 5<br><i style="background:green; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>Mont Amba: 4<br><br><b>Communes les plus fréquentes</b><br><span>&#128205;</span> Gombe: 61<br><span>&#128205;</span> Limete: 54<br><span>&#128205;</span> Ngaliema: 54<br><span>&#128205;</span> Lemba: 39<br><span>&#128205;</span> Kintambo: 31<br><span>&#128205;</span> Kasa-Vubu: 21<br><span>&#128205;</span> Kalamu: 16<br><span>&#128205;</span> Lingwala: 15<br><span>&#128205;</span> Kinshasa: 15<br><span>&#128205;</span> Barumbu: 13<br><span>&#128205;</span> Bandalungwa: 13<br><span>&#128205;</span> N'sele: 10<br><span>&#128205;</span> N'djili: 9<br><span>&#128205;</span> Masina: 8<br><span>&#128205;</span> Kimbanseke: 7<br><span>&#128205;</span> Selembao: 7<br><span>&#128205;</span> Matete: 6<br><span>&#128205;</span> Ngiri-Ngiri: 6<br><span>&#128205;</span> Maluku: 3<br><span>&#128205;</span> Bumbu: 3<br><span>&#128205;</span> Ngaba: 2<br></div>
+    
+            <div class="folium-map" id="map_fcf6ee8406882513ccad8928a9290d31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fcf6ee8406882513ccad8928a9290d31 = L.map(
+                "map_fcf6ee8406882513ccad8928a9290d31",
+                {
+                    center: [-4.35, 15.35],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d688d7859bb7414ac82b756e56012f29 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d688d7859bb7414ac82b756e56012f29.addTo(map_fcf6ee8406882513ccad8928a9290d31);
+        
+    
+            var circle_ad5f812c8679b4d7cfd4deaa045ac21e = L.circle(
+                [-4.357966666666667, 15.297783333333333],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3300, "stroke": true, "weight": 3}
+            ).addTo(map_fcf6ee8406882513ccad8928a9290d31);
+        
+    
+        var popup_c20134a4d5b759ca1e5443d59873c7a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cb275a4426ed664dbe5c4c2f7520a2f = $(`<div id="html_1cb275a4426ed664dbe5c4c2f7520a2f" style="width: 100.0%; height: 100.0%;">District Funa (Total: 66)</div>`)[0];
+                popup_c20134a4d5b759ca1e5443d59873c7a1.setContent(html_1cb275a4426ed664dbe5c4c2f7520a2f);
+            
+        
+
+        circle_ad5f812c8679b4d7cfd4deaa045ac21e.bindPopup(popup_c20134a4d5b759ca1e5443d59873c7a1)
+        ;
+
+        
+    
+    
+            var circle_65351f9494c369ca5d5b9210e604d9f9 = L.circle(
+                [-4.323498833333333, 15.289112166666667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9450, "stroke": true, "weight": 3}
+            ).addTo(map_fcf6ee8406882513ccad8928a9290d31);
+        
+    
+        var popup_4da4fb3da935fa0742c1640023624bde = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18f222c72b255da157fc6c6cd6e30bb1 = $(`<div id="html_18f222c72b255da157fc6c6cd6e30bb1" style="width: 100.0%; height: 100.0%;">District Lukunga (Total: 189)</div>`)[0];
+                popup_4da4fb3da935fa0742c1640023624bde.setContent(html_18f222c72b255da157fc6c6cd6e30bb1);
+            
+        
+
+        circle_65351f9494c369ca5d5b9210e604d9f9.bindPopup(popup_4da4fb3da935fa0742c1640023624bde)
+        ;
+
+        
+    
+    
+            var circle_46a7f6dd2479021132af2c701f875278 = L.circle(
+                [-4.387275, 15.3375],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5050, "stroke": true, "weight": 3}
+            ).addTo(map_fcf6ee8406882513ccad8928a9290d31);
+        
+    
+        var popup_30c8f82dce04f786adb50eaa00b2766a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5767d6ae1a53d21dda542c1dc262b64d = $(`<div id="html_5767d6ae1a53d21dda542c1dc262b64d" style="width: 100.0%; height: 100.0%;">District Mont Amba (Total: 101)</div>`)[0];
+                popup_30c8f82dce04f786adb50eaa00b2766a.setContent(html_5767d6ae1a53d21dda542c1dc262b64d);
+            
+        
+
+        circle_46a7f6dd2479021132af2c701f875278.bindPopup(popup_30c8f82dce04f786adb50eaa00b2766a)
+        ;
+
+        
+    
+    
+            var circle_3587e5d6501b1bd857aac136f5d12a1b = L.circle(
+                [-4.41024, 15.542359999999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1850, "stroke": true, "weight": 3}
+            ).addTo(map_fcf6ee8406882513ccad8928a9290d31);
+        
+    
+        var popup_beeee0b915f8d2e58fd4d4970551c092 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_867602812e3f241c34aadd0b6148797e = $(`<div id="html_867602812e3f241c34aadd0b6148797e" style="width: 100.0%; height: 100.0%;">District Tshangu (Total: 37)</div>`)[0];
+                popup_beeee0b915f8d2e58fd4d4970551c092.setContent(html_867602812e3f241c34aadd0b6148797e);
+            
+        
+
+        circle_3587e5d6501b1bd857aac136f5d12a1b.bindPopup(popup_beeee0b915f8d2e58fd4d4970551c092)
+        ;
+
+        
+    
+</script>
+</html>
