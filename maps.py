@@ -12,7 +12,7 @@ data = [
     {'District': 'Tshangu', 'Commune': 'Kimbanseke', 'Total': 7},
     {'District': 'Lukunga', 'Commune': 'Kinshasa', 'Total': 15},
     {'District': 'Lukunga', 'Commune': 'Kintambo', 'Total': 31},
-    {'District': 'Mont Amba', 'Commune': 'Lemba', 'Total': 39},
+    {'District': 'Mont Amba', 'Commune': 'Lemba', 'Total': 46},
     {'District': 'Mont Amba', 'Commune': 'Limete', 'Total': 54},
     {'District': 'Lukunga', 'Commune': 'Lingwala', 'Total': 15},
     {'District': 'Tshangu', 'Commune': 'Maluku', 'Total': 3},
