@@ -91,14 +91,17 @@ for _, row in df.iterrows():
 # --- LÉGENDE (inchangée) ---
 total_unique_districts = df['District'].nunique()
 district_commune_counts = df['District'].value_counts()
-top_5_communes = df.sort_values('Total', ascending=False)
+top_communes = df.sort_values('Total', ascending=False)
 
-legend_html = '''
+# On ajoute max-height et overflow-y pour la compatibilité mobile
+legend_html = f'''
 <div style="
     position: fixed; 
     bottom: 20px; 
-    left: 20px; 
+    left: 10px; 
     width: 200px; 
+    max-height: 35vh; /* Hauteur max = 40% de l'écran */
+    overflow-y: auto;  /* Ajoute une scrollbar si nécessaire */
     background-color: white; 
     border:2px solid grey; 
     z-index:9999; 
@@ -112,13 +115,20 @@ legend_html = '''
 for district, count in district_commune_counts.items():
     color = district_colors.get(district, 'black')
     legend_html += f'<i style="background:{color}; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>{district}: {count}<br>'
+
 legend_html += '<br><b>Communes les plus présentes</b><br>'
-for _, row in top_5_communes.iterrows():
-    legend_html += f'<span>&#128205;</span> {row["Commune"]}: {row["Total"]}<br>'
+
+# Boucle sur TOUTES les communes triées
+for _, row in top_communes.iterrows():
+    # &#128205; est le code HTML pour l'émoji 📍, mais sur votre image c'est ❤️
+    # On utilise donc &#10084; pour le coeur rouge.
+    legend_html += f'<span style="color:red; margin-right: 3px;">&#128205;</span> {row["Commune"]}: {row["Total"]}<br>'
+
 legend_html += '</div>'
 
-m.get_root().html.add_child(folium.Element(legend_html.format(total_unique_districts=total_unique_districts)))
+# 3. Ajouter la légende à la carte
+m.get_root().html.add_child(folium.Element(legend_html))
 
 # --- Sauvegarde de la carte ---
-m.save('carte_districts_et_communes.html')
-print("Carte sauvegardée sous 'carte_districts_et_communes.html'")
+m.save('index.html')
+print("Carte sauvegardée sous 'index.html'")
