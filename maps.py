@@ -100,7 +100,7 @@ for district, count in district_point_counts.items():
     color = district_colors.get(district, 'black')
     legend_html += f'<i style="background:{color}; border-radius:50%; width:12px; height:12px; display:inline-block; margin-right:6px;"></i>{district}: {count}<br>'
 
-legend_html += '<br><b>Points par Commune</b><br>'
+legend_html += '<br><b>Entreprises par Commune</b><br>'
 for _, row in commune_point_counts.iterrows():
     legend_html += f'📍 {row["Commune"]}: {row["Total"]}<br>'
 legend_html += '</div>'
