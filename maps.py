@@ -94,7 +94,7 @@ legend_html = f'''
     z-index:9999; padding: 10px; font-family: Arial, sans-serif; font-size: 12px;
 ">
 <b style="font-size: 14px;">LÉGENDE ET STATISTIQUES</b><br><br>
-<b>Points par District (Total: {len(district_point_counts)})</b><br>
+<b>Entreprises par District (Total: {len(district_point_counts)})</b><br>
 '''
 for district, count in district_point_counts.items():
     color = district_colors.get(district, 'black')
